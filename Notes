@@ -1,0 +1,592 @@
+#### BATTERIES 
+
+M59JH - APLT56 - GRamon
+
+70N2F - APLT59 - DCaldwell
+
+https://www.amazon.com/QINGYUX-Battery-Compatible-Notebook-7167mAh/dp/B092VX66MB
+
+https://www.amazon.com/69KF2-Battery-Replacement-Precision-Alienware/dp/B09GY7RL55
+
+################ winget as system
+
+cd "c:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.25.390.0_x64__8wekyb3d8bbwe"
+
+cd "c:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*_x64__8wekyb3d8bbwe"
+
+winget.exe uninstall --name "bloomberg.bloombergterminal" --accept-source-agreements --force --silent
+
+winget.exe install Anthropic.Claude --accept-source-agreements --accept-package-agreements --force --silent --scope machine
+
+
+winget.exe install <package> --accept-source-agreements --accept-package-agreements --force --silent
+
+
+winget.exe update RingCentral.RingCentral --accept-source-agreements --accept-package-agreements --force --silent
+
+
+```````````````````````````````````````````
+
+winget.exe uninstall adobe.acrobat.reader.64-bit --accept-source-agreements --accept-package-agreements --force --silent --scope machine
+
+# Adobe Pro
+winget.exe install adobe.acrobat.pro --accept-source-agreements --accept-package-agreements --force --silent
+
+
+
+#####
+Install winget: 
+
+Add-AppxPackage https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+
+###
+powershell -Command "Invoke-WebRequest -Uri https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle' -OutFile 'C:\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle'"
+
+Invoke-WebRequest -Uri 'https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle' -OutFile 'C:\temp\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle'
+
+
+Winget dependencies 
+
+# Visual C++ UWP
+
+https://www.microsoft.com/en-us/download/details.aspx?id=102159 
+
+# XAML 2.8
+
+https://stackoverflow.com/questions/69852739/how-install-specific-version-of-microsoft-ui-xaml
+
+################
+
+alternative to OOBE\bypassnro
+
+start ms-cxh:localonly
+
+
+################ PSEXEC as system (for testing intune packages in system context)
+
+PsExec -s -i cmd.exe
+
+
+############## Launch app from ps terminal as admin
+
+Start-Process powershell -Verb RunAs
+
+
+############# Everything CMD map network shares
+
+Everything64.exe -add-network-indexes [{"host":"apazfs","username":"rparke","password":"<password>","monitor":1,"include_only":[{"path":"E:\General","mount":"G:\"}]}]
+
+
+Everything64.exe -add-network-indexes [{"host":"apazfs","username":"rparke","password":"<password>","monitor":1]}]
+
+Everything64.exe -add-network-indexes [{"host":"apazfs","username":"tdevries","password":"<password>","monitor":1]}]
+
+
+######## Exchangeonline cheatsheet
+
+
+# List of which users have what access to calendar
+Get-MailboxFolderPermission -Identity jcohen@arrowmarkpartners.com:\Calendar
+
+# remove calendar perms
+Remove-MailboxFolderPermission -Identity jcohen@arrowmarkpartners.com:\Calendar -User sophie.bushong@example.com
+
+# add calendar perms (access rights should be reviewer to view and editor to fully manage)
+Add-MailboxFolderPermission -Identity jcohen@arrowmarkpartners.com:\Calendar -User kate_darkknightventures.net#EXT# -AccessRights Reviewer
+
+
+
+#####
+
+Logic Monitor report process
+
+- Append logicmonitor weekly report to aggregate report spreadsheet
+
+
+########
+
+To shutdown sever
+
+- contact EOC team for scream testing
+- Put in SDT for 3 months 
+
+
+TODO 
+
+DC05 - put in ticket to shut down
+
+# SYNOPTEK SECURITY DISTRO 
+
+DL-SecurityServices
+
+##### BMS SFTP
+
+38.124.4.10
+
+fn_arrowmark
+
+sftp.alterdomus.com
+
+Arrowmark-Cortland-02
+
+port: 22
+
+###
+librechat
+
+cd C:\GH\LibreChat
+
+# Start
+
+docker compose up -d
+
+# Stop
+
+docker compose down
+
+# visit
+http://localhost:3080/
+
+####
+MCP 
+
+# Everything Search 
+C:\OfflineBackup\Everything_MCP_Test\
+
+main.py
+
+###
+
+# UV in any directory/environment/env in one line  
+
+uv run --project C:\path\to\project C:\path\to\project\script.py
+
+
+
+###
+
+model_provider = "azure"
+provider = "azure"
+model = "gpt-4o"
+
+[model_providers.azure]
+name = "Azure OpenAI"
+base_url = "https://arrowmarkai-gpt.openai.azure.com/openai/deployments/gpt-4o"
+env_key = "AMPOPENAI_API_KEY"
+query_params = { api-version = "2024-05-01-preview" }
+
+
+
+##########
+
+local admin for kiosk 
+
+kioskADM
+
+Wontonsoup1994$
+
+###########
+
+P: drive 
+
+\\APAZPBI-UAT\c$\pbi\FileDrop\SecurityMasterAttributeLoader\Drop
+
+# map G: drive
+net use G: \\APAZFS.arrowpointpartners.com\general$ /persistent:yes
+
+# map U: drive
+net use U: \\APAZFS.arrowpointpartners.com\users$\jxian /persistent:yes
+
+# unmap G: drive
+net use G: /delete
+
+##########
+
+Autopilot V2 notes
+
+devicename formula
+
+# Todo
+map drives?
+basecamp
+
+
+# intune run powershell script
+
+Powershell.exe -NoProfile -ExecutionPolicy ByPass -File .\<scriptname>.ps1
+
+
+# required app for autopilot v2 
+Intune_Autopilot_v2
+
+# Passkey security group
+passkeys
+
+# optional settings post enrollment
+
+
+### AmpAi
+
+# Enable/Disable username password fields for sign in (should usually be off to force sign in via SSO button)
+
+Azure > arrowmarkgpt container app > env variables > "ENABLE LOGIN FORM" set to on/off
+
+
+# Refresh device inventory plan
+
+- Corey
+
+
+# powershell disable mailbox rules
+
+Add-MailboxPermission -Identity "wlittle@arrowmarkpartners.com" -User "rparke@arrowmarkpartners" -AccessRights FullAccess
+
+
+Get-InboxRule -Mailbox "wlittle@arrowmarkpartners.com" -IncludeHidden
+
+Get-Mailbox -ResultSize Unlimited -RecipientTypeDetails SharedMailbox | ForEach-Object {$mailbox = $_.PrimarySmtpAddress
+    Get-InboxRule -Mailbox $mailbox | Select-Object @{Name="Mailbox";Expression={$mailbox}}, Name, Description
+} | Export-Csv -Path "C:\SharedMailboxRules.csv" -NoTypeInformation
+
+
+Get-InboxRule -Mailbox "wlittle@arrowmarkpartners.com" | Remove-inbox
+
+Get-InboxRule -Mailbox "wlittle@arrowmarkpartners.com" | Disable-InboxRule
+
+Disable-InboxRule -Mailbox "Shared Mailbox Name or Email" -Identity "Rule Name"
+
+
+###
+
+## Mailbox Access Scope Restrictions 
+
+## To scope an azure graph application to a specific 365 mailbox you cannot scope graph permissionsions in azure, you have to define a scope pointed to the specific mailbox in exchange online, then use a service principal pointer to bridge exchange online to the graph application. Finally, use a management role assignment in exchange online to connect the graph pointer to the mailbox scope. 
+
+# Replace with the actual email address of the target mailbox
+New-ManagementScope -Name "Single-Mailbox-Scope" -RecipientRestrictionFilter "PrimarySmtpAddress -eq 'target-mailbox@yourdomain.com'"
+
+
+
+# OR 
+# Alternative approach using theUserPrincipalName
+
+New-ManagementScope -Name "Single-Mailbox-Scope" -RecipientRestrictionFilter "UserPrincipalName -eq 'target-mailbox@yourdomain.com'"
+
+# Create a Service Principal Pointer in Exchange Online
+# You need to find your service principal's Object ID (not the Application ID) from Entra ID. This is the "object ID" of the ENTERPRISE APPLICATION SERVICE PRINCIPAL, and NOT the object ID of the APP REGISTRATION. This step creates a pointer to the specific instance of an app
+
+New-ServicePrincipal -AppId "YOUR-CLIENT-ID (this is the application client ID in Azure" -ObjectId "YOUR-SERVICE-PRINCIPAL-OBJECT-ID" -DisplayName "Your-App-Name (can be anything, I prefer to make this the name of the azure App Registration"
+
+# For mail access (replace with the appropriate role based on your needs)
+# Note: Cannot add multiple roles in one line, for each role (mail.read, mail.write etc) you must rerun the command with the new role. 
+New-ManagementRoleAssignment -App "SERVICEPRINCIPAL APP DISPLAYNAME (Displayname )" -Role "Application Mail.Read" -CustomResourceScope "Single-Mailbox-Scope"
+
+Example of comman application Roles:
+
+Application Mail.Read - Read email only
+Application Mail.ReadWrite - Read and manage email (no send)
+Application Mail.Send - Send mail
+
+
+###
+New-ManagementScope -Name "SRT_Reporting_Mailbox" -RecipientRestrictionFilter "PrimarySmtpAddress -eq 'srtreporting@arrowmarkpartners.com'"
+
+##
+New-ServicePrincipal -AppId "d6a69784-e545-4cf9-b6bd-b0b4a939bdad" -ObjectId "80a6bffa-c12a-4195-83d9-db8d1a5c8739" -DisplayName "Intellimation"
+
+##
+# For mail access (replace with the appropriate role based on your needs)
+New-ManagementRoleAssignment -App "Intellimation" -Role "Application Mail.ReadWrite" -CustomResourceScope "SRT_Reporting_Mailbox"
+
+
+#  Find existing management scopes 
+
+Get-ManagementRoleAssignment -RoleAssignee <service principal object id>
+
+# Example
+Get-ManagementRoleAssignment -RoleAssignee 6a17c80c-52cb-4b43-b3d8-72d597211232
+
+
+###
+
+New-ManagementRoleAssignment -App "OpsDataMailAutomation" -Role "Application Mail.Send" -CustomResourceScope "OpsDataAdminAutomation"
+
+
+# get service principal permissions per mailbox (aka "management scope")
+
+Get-ManagementRoleAssignment -RoleAssignee <ServicePrincipal_ObjectId> | Select-Object Name, Role, CustomResourceScope
+
+
+# example 
+Get-ManagementRoleAssignment -RoleAssignee f0f58597-617b-444d-9d6a-6f410c3a93ea | Select-Object Name, Role, CustomResourceScope
+
+
+
+
+
+##
+
+forward service alerts on apaztab from logicmonitor to PBI
+
+
+# 3rd floor west cr printer
+10.50.30.28
+
+
+
+#########
+www2-netx360.extadcprsh.bnymellon.com
+
+
+
+netx360.com
+
+www2.netx360.com
+
+170.61.33.6
+
+170.31.41.6
+
+# Disable powershell predictive text in powershell $profile
+
+Set-PSReadLineOption -PredictionSource None
+
+# Intellimation VMs
+APAZAPPIM-UAT 
+APAZAPPIM
+
+
+######
+
+
+# Cert renewal (per KBrizzle)
+get the thumbprint from the cert
+
+check all servers that have any websites 
+review/reissue and fix the cert with priv key
+export to pfx 
+upload to SS for synoptek
+export to pfs for vendors 
+check kinsta and upload to kinsta
+
+ 
+####
+ 
+# open-webui
+
+uv-add open-webui[all]
+
+...\DirectoryPath\.venv\Scripts\open-webui.exe
+ 
+# Path to package environent (where to place optional .env)
+C:\OWUI\.venv\Lib\site-packages\open-webui
+ 
+# Disable loginscreen (by default uses system env variables)
+WEBUI_AUTH=False
+
+# Delete this DB to reset creds
+data/webui.db
+ 
+C:\OWUI\.venv\Scripts\open-webui.exe serve
+
+
+# Search for all servers on a domain with a matching cert: 
+
+Get-ChildItem -Path Cert:\LocalMachine\My | Where-Object {$_.Thumbprint -match "83338b1a8f5da6208037a43bfe79346a5336c3c0"} | select * | fl
+
+# Everything commandline search 
+
+.\es.exe -instance 1.5a -save-settings
+
+
+
+#################
+Graph mail API Powershell 
+
+# Install module
+Install-Module Microsoft.Graph.Mail -Scope CurrentUser
+
+OR 
+
+Install-Module Microsoft.Graph.Mail -Scope AllUsers
+
+# All mail objects
+Get-MgUserMessage -UserId user@domain.com -All
+
+# Messages from specific folder
+# Using well-known folder names (Inbox, Drafts, SentItems, DeletedItems, etc.)
+Get-MgUserMailFolderMessage -UserId user@domain.com -MailFolderId "Inbox" -All
+ 
+# Using folder ID
+Get-MgUserMailFolderMessage -UserId user@domain.com -MailFolderId "AAMkAGVm..." -All
+
+# Get single message with properties
+Get-MgUserMessage -UserId user@domain.com -MessageId $messageId -Property "subject,body,bodyPreview,uniqueBody"
+
+
+#Filter by sender
+Get-MgUserMessage -UserId user@domain.com -Filter "from/emailAddress/address eq 'sender@domain.com'"
+
+#Filter by date range
+Get-MgUserMailFolderMessage -UserId user@domain.com -MailFolderId "Inbox" `
+  -Filter "receivedDateTime ge 2024-01-01T00:00:00Z and receivedDateTime le 2024-12-31T23:59:59Z"
+
+# Filter unread messages
+Get-MgUserMessage -UserId user@domain.com -Filter "isRead eq false"
+
+# Full-text search
+Get-MgUserMessage -UserId user@domain.com -Search "project update"
+
+# Sort and limit results
+Get-MgUserMailFolderMessage -UserId user@domain.com -MailFolderId "Inbox" `
+  -Sort "receivedDateTime DESC" -Top 25
+
+# Get body with specific properties
+$message = Get-MgUserMessage -UserId user@domain.com -MessageId $messageId `
+  -Property "subject,body,bodyPreview"
+
+# Get plain text body (no HTML tags)
+powershell# Request text format using headers
+$message = Get-MgUserMessage -UserId user@domain.com -MessageId $messageId `
+  -Property "subject,body" ` # Optional 
+  -Headers @{ "Prefer" = 'outlook.body-content-type="text"' }
+
+List Folders
+powershell# All folders
+Get-MgUserMailFolder -UserId user@domain.com -All
+
+# Specific folder with child folders
+Get-MgUserMailFolder -UserId user@domain.com -MailFolderId "Inbox"
+Send Email
+powershell$params = @{
+    Message = @{
+        Subject = "Test Email"
+        Body = @{
+            ContentType = "HTML"
+            Content = "<p>Email body</p>"
+        }
+        ToRecipients = @(
+            @{
+                EmailAddress = @{
+                    Address = "recipient@domain.com"
+                }
+            }
+        )
+    }
+}
+
+Send-MgUserMail -UserId user@domain.com -BodyParameter $params
+Move/Delete Messages
+# Move to folder
+Move-MgUserMessage -UserId user@domain.com -MessageId $messageId -DestinationId $folderId
+
+# Soft delete (to Recoverable Items)
+Remove-MgUserMessage -UserId user@domain.com -MessageId $messageId
+
+# Update properties
+Update-MgUserMessage -UserId user@domain.com -MessageId $messageId -IsRead $true
+Common Property Access
+$message = Get-MgUserMessage -UserId user@domain.com -MessageId $messageId
+
+$message.Subject
+$message.From.EmailAddress.Address
+$message.ToRecipients.EmailAddress.Address
+$message.ReceivedDateTime
+$message.HasAttachments
+$message.InternetMessageId
+$message.Body.Content          # Full body
+$message.BodyPreview          # First 255 chars
+$message.ParentFolderId
+
+## Example: Extract most recent email from list, view body contents
+
+$messages = get-mgusermessage -userid rparke@arrowmarkpartners.com -Property "subject,body,bodypreview,uniquebody" -Headers @{ "Prefer" = 'outlook.body-content-type="text"' }
+
+$messagebody = $messages[0].Body
+
+#################
+#################
+
+
+# powershell - get rules on mailbox
+
+Add-MailboxPermission -Identity "wlittle@arrowmarkpartners.com" -User "rparke@arrowmarkpartners" -AccessRights FullAccess
+
+
+Get-InboxRule -Mailbox "wlittle@arrowmarkpartners.com" -IncludeHidden
+
+Get-Mailbox -ResultSize Unlimited -RecipientTypeDetails SharedMailbox | ForEach-Object {$mailbox = $_.PrimarySmtpAddress
+    Get-InboxRule -Mailbox $mailbox | Select-Object @{Name="Mailbox";Expression={$mailbox}}, Name, Description
+} | Export-Csv -Path "C:\SharedMailboxRules.csv" -NoTypeInformation
+
+
+Get-InboxRule -Mailbox "wlittle@arrowmarkpartners.com" | Remove-inbox
+
+Get-InboxRule -Mailbox "wlittle@arrowmarkpartners.com" | Disable-InboxRule
+
+Disable-InboxRule -Mailbox "Shared Mailbox Name or Email" -Identity "Rule Name"
+
+###########
+###########
+
+
+# powershell 7 connect and authenticate to mggraph via client secret 
+#https://www.reddit.com/r/Intune/comments/1dpeq5c/how_to_connect_using_powershell_and_client_secret/
+
+$tenantId = "IDHERE"
+$clientId = "IDHERE"
+$clientSecret = ConvertTo-SecureString "CLIENTSECRETHERE" -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential($clientId, $clientSecret)
+Connect-MgGraph -NoWelcome -ClientSecretCredential $credential -TenantId $tenantId
+
+
+### intune LAPS local admin config
+
+1. entra ID admin center > devices > device settings "enable microsoft entra local admin password solution (LAPS)" > "Yes"
+
+2. Intune admin center > Endpoint Security > Account Protection > Creat Policy > "local admin password solution (LAPS)" > configure settings
+
+Other notes
+
+- To configure automatic LAPS account creation per device disalbe "Administrator account name" and enable "Automatic account management"
+
+
+####
+
+Azure role/action/permission search tool
+
+
+https://rbac-catalog.dev/
+
+Super helpful for finding least permissioned role for actions/permissions within a resource group
+
+
+# PNP Powershell
+
+# app/clientID
+a04df523-36c7-444f-8d06-0201fb1d215f
+
+# initiate connectin
+Connect-PnPOnline -Url "https://arrowpointpartners.sharepoint.com/sites/Tms_Amp_Stronghill" -Interactive -ClientId "a04df523-36c7-444f-8d06-0201fb1d215f"
+
+# Search example
+Submit-PnPSearchQuery -Query "Budget"
+
+# Search files and output results to gridview
+$results = Submit-PnPSearchQuery -Query "Budget" -MaxResults 50
+$results.ResultRows | ConvertTo-Json -Depth 10 | ConvertFrom-Json | Out-GridView
+$results.ResultRows | ConvertTo-Json -Depth 10 | ConvertFrom-Json | Out-GridView
+
+
+
+# RC client ID 
+0mRBIov5Mv2eoKwfGe1qnz
+
+# RC client secret
+bKfctQbzaCdehteFUb8Zm7V1H7im6dKD6dpsSArZfaRG
+
+# credential client ID
+ciyK0G5G3oeaX1z9iXOEsz
+
+# JWT
+eyJraWQiOiI4NzYyZjU5OGQwNTk0NGRiODZiZjVjYTk3ODA0NzYwOCIsInR5cCI6IkpXVCIsImFsZyI6IlJTMjU2In0.eyJhdWQiOiJodHRwczovL3BsYXRmb3JtLnJpbmdjZW50cmFsLmNvbS9yZXN0YXBpL29hdXRoL3Rva2VuIiwic3ViIjoiMjYxNjMwMzAwOCIsImlzcyI6Imh0dHBzOi8vcGxhdGZvcm0ucmluZ2NlbnRyYWwuY29tIiwiZXhwIjozOTE4OTM1MDExLCJpYXQiOjE3NzE0NTEzNjQsImp0aSI6Img4N1JSWGhwU25hY1ltZl96T1hWSXcifQ.baIFR08kBD_JnDtkyqWF9_HnidK3XGH-EU4R3dSEcaqEzib6WAoTOtiQ7-Jx-iYED5rAaEg_aBbcj2pvSnfbczs7YfHyK3pl1ZDUvUt538zjC7n1ZeZxBD3hPWgRg_K98RBt7QndjAr0ASvHpP24ETFveCHOBDcCBvnwoeUijeaM_j-jjyitOnNCZCyhxwj9CJwk_3P_d2fNepakq1VzbehCnfm9PAgJmzrFGU8sYqZwujYhtQhCvAscv1byOXjypWTZ2Z_D9kUPMlzJietZ6hpkqCv5z0a8rNBqqKA-rqr4w_NLhWOsUH5BfBSnQ-32gXfLPy7nR8p5IqAXFNDbHg
